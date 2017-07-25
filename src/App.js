@@ -14,10 +14,10 @@ class App extends Component {
     Array.prototype.slice.call(card.currentTarget.childNodes).map( element => {
       setTimeout( () => {
         if(element.classList.contains('back')){
-          element.classList.toggle('show')
+          element.classList.toggle('hide')
         }
         if(element.classList.contains('front')){
-          element.classList.toggle('hide')
+          element.classList.toggle('show')
         }
       },300)
     })
@@ -34,10 +34,10 @@ class App extends Component {
           {Clow.map(x =>
            <div className='container'>
             <div className='flipping-card' onClick={this.rotate}>
-              <div className='face front'>
+              <div className='face front hide'>
                 <img src={x.img} height='300px' />
               </div>
-              <div className='face back hide'>
+              <div className='face back'>
                 <img src={Bicycle} height='300px' />
               </div>
             </div>
