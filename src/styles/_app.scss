@@ -40,7 +40,12 @@
     transform-style: preserve-3d;
   }
 }
-
+.hide{
+  display: none;
+}
+.show{
+  display: block !important;
+}
 .flip{
   transform: rotateY(180deg);
 }

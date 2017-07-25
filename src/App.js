@@ -11,6 +11,16 @@ class App extends Component {
   }
   rotate(card){
     card.currentTarget.classList.toggle('flip')
+    Array.prototype.slice.call(card.currentTarget.childNodes).map( element => {
+      setTimeout( () => {
+        if(element.classList.contains('back')){
+          element.classList.toggle('show')
+        }
+        if(element.classList.contains('front')){
+          element.classList.toggle('hide')
+        }
+      },300)
+    })
   }
   render () {
     return (
@@ -27,7 +37,7 @@ class App extends Component {
               <div className='face front'>
                 <img src={x.img} height='300px' />
               </div>
-              <div className='face back'>
+              <div className='face back hide'>
                 <img src={Bicycle} height='300px' />
               </div>
             </div>
